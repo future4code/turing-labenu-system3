@@ -1,0 +1,21 @@
+{
+  "name": "turing-labenu-system3",
+  "version": "1.0.0",
+  "description": "Sistema de gerenciamento Labenu.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "clear && node ./build/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/future4code/turing-labenu-system3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/future4code/turing-labenu-system3/issues"
+  },
+  "homepage": "https://github.com/future4code/turing-labenu-system3#readme"
+}
