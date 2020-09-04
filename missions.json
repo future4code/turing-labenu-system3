@@ -1,0 +1,1 @@
+[{"id":"1","startDate":"27/02/2020","endDate":"12/12/2020","teachers":[{"id":1,"name":"Mateus","email":"mateus@gmail.com","specialties":["BACKEND"]}],"students":[{"id":1,"name":"Paulo","email":"paulo@gmail.com","birthData":"2000-08-13T03:00:00.000Z"}],"currentModule":1,"name":""}]
