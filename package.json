@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "clear && node ./build/index.js"
+    "start": "tsc && clear && node ./build/index.js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/future4code/turing-labenu-system3/issues"
   },
-  "homepage": "https://github.com/future4code/turing-labenu-system3#readme"
+  "homepage": "https://github.com/future4code/turing-labenu-system3#readme",
+  "dependencies": {
+    "@types/moment": "^2.13.0",
+    "@types/node": "^14.6.4"
+  }
 }
