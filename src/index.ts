@@ -10,6 +10,7 @@ const alunoUm = new Student(1, 'Paulo', 'paulo@gmail.com', moment('13/08/2000','
 const professorUm = new Teacher(1, 'Mateus', 'mateus@gmail.com', [TEACHER_SPECIALTY.BACKEND]);
 
 const turmaUm = new FullTimeMission('1', '27/02/2020', '12/12/2020', [professorUm], [alunoUm], 1);
+turmaUm.setName('Turing')
 
 const databaseStudent = new FileManager('./students.json');
 
@@ -17,17 +18,35 @@ const databaseTeacher = new FileManager('./teachers.json');
 
 const databaseMission = new FileManager('./missions.json');
 
-// databaseStudent.writeFile([alunoUm])
+databaseStudent.writeFile([alunoUm])
 
-// databaseTeacher.writeFile([professorUm])
+databaseTeacher.writeFile([professorUm])
 
-// databaseMission.writeFile([turmaUm])
+databaseMission.writeFile([turmaUm])
 
-// console.log(`Aqui está a lista de estudantes: ${databaseStudent.readFile()}`)
+const studentsList: any = databaseStudent.readFile()
 
-// console.log(`Aqui está a lista de professores: ${databaseTeacher.readFile()}`)
+const teachersList: any = databaseTeacher.readFile()
 
-// console.log(`Aqui está a lista de turmas: ${databaseMission.readFile()}`)
+const missionsList: any = databaseMission.readFile()
+
+console.log(`Aqui está a lista de estudantes: `)
+
+for(let i of studentsList) {
+    console.log(i)
+}
+
+console.log(`Aqui está a lista de professores: `)
+
+for(let i of teachersList) {
+    console.log(i)
+}
+
+console.log(`Aqui está a lista de turmas: `)
+
+for(let i of missionsList) {
+    console.log(i)
+}
 
 const listaDeEstudantes = databaseStudent.readFile()
 let student: Student = new Student(1, '','', moment()); 
