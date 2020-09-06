@@ -21,31 +21,31 @@ export class Student implements Person {
         this.birthData = birthData;
     }
 
-    getId(): number {
+    public getId(): number {
         return this.id
     };
     
-    getName(): string {
+    public getName(): string {
         return this.name
     };
 
-    getEmail(): string {
+    public getEmail(): string {
         return this.email
     };
 
-    getBirthData(): moment.Moment {
-        return this.birthData
+    public getBirthData(): moment.Moment {
+        return this.birthData;
     };
 
-    setName(name: string): void {
+    public setName(name: string): void {
         this.name = name
     };
 
-    setEmail(email: string): void {
+    public setEmail(email: string): void {
         this.email = email
     };
 
-    setBirthData(): void {
+    public setBirthData(data: moment.Moment): void {
         this.birthData = this.birthData
     };
 }

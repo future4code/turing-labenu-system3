@@ -5,7 +5,7 @@ import { FullTimeMission } from './FullTimeMission';
 import moment from 'moment'
 moment.locale("pt-br")
 
-const alunoUm = new Student(1, 'Paulo', 'paulo@gmail.com', moment('13/08/2000', 'DD/MM/YYYY'));
+const alunoUm = new Student(1, 'Paulo', 'paulo@gmail.com', moment('13/08/2000','DD/MM/YYYY'));
 
 const professorUm = new Teacher(1, 'Mateus', 'mateus@gmail.com', [TEACHER_SPECIALTY.BACKEND]);
 
@@ -30,12 +30,18 @@ const databaseMission = new FileManager('./missions.json');
 // console.log(`Aqui está a lista de turmas: ${databaseMission.readFile()}`)
 
 const listaDeEstudantes = databaseStudent.readFile()
-const student: Student = listaDeEstudantes.filter((idx: any) => {
-    return idx.id === 1
-})
+let student: Student = new Student(1, '','', moment()); 
+let idx: Student;
 
-const today = moment()
+for( idx of listaDeEstudantes){
+    if(idx.id === 1) {
+        student = new Student(1, idx.name,idx.email, moment(idx.birthData) );
+    }
+}
 
-// const diffYears: number =  today.diff(student.getBirthData())
-
-console.log(`A idade do aluno é de: ${student.getBirthData()} anos.`)
+if( (moment().day() >= student.getBirthData().day()) && (moment().month()  >= student.getBirthData().month())){
+    console.log(moment().year() - student.getBirthData().year());
+}
+else{
+    console.log( moment().year() - student.getBirthData().year() -1);
+}

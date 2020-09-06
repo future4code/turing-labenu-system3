@@ -15,12 +15,17 @@ const turmaUm = new FullTimeMission_1.FullTimeMission('1', '27/02/2020', '12/12/
 const databaseStudent = new FileManager_1.FileManager('./students.json');
 const databaseTeacher = new FileManager_1.FileManager('./teachers.json');
 const databaseMission = new FileManager_1.FileManager('./missions.json');
-databaseStudent.writeFile([alunoUm]);
-databaseTeacher.writeFile([professorUm]);
-databaseMission.writeFile([turmaUm]);
 const listaDeEstudantes = databaseStudent.readFile();
-const student = listaDeEstudantes.filter((idx) => {
-    return idx.id === 1;
-});
-const today = moment_1.default();
-console.log(`A idade do aluno é de: ${student.getBirthData()} anos.`);
+let student = new Student_1.Student(1, '', '', moment_1.default());
+let idx;
+for (idx of listaDeEstudantes) {
+    if (idx.id === 1) {
+        student = new Student_1.Student(1, idx.name, idx.email, moment_1.default(idx.birthData));
+    }
+}
+if ((moment_1.default().day() >= student.getBirthData().day()) && (moment_1.default().month() >= student.getBirthData().month())) {
+    console.log(moment_1.default().year() - student.getBirthData().year());
+}
+else {
+    console.log(moment_1.default().year() - student.getBirthData().year() - 1);
+}
